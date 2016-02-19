@@ -12,5 +12,5 @@ import edu.lawrence.to.User;
  */
 
 public interface UserRepository extends JpaRepository<User, Long> {
-
+	List<User> findByUsername(String username);
 }
