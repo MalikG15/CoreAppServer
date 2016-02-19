@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+version = '1.0'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE'
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'io.spring.platform:platform-bom:2.0.2.RELEASE'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-test'
+    compile 'org.skyscreamer:jsonassert'
+    compile 'org.springframework.boot:spring-boot-data-jpa'
+    compile 'org.springframework.data:spring-data-jpa'
+    compile 'mysql:mysql-connector-java'
+    compile 'org.hibernate:hibernate-entitymanager'
+    compile 'org.springframework:spring-aspects'
+    compile 'org.springframework:spring-context-support'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}
