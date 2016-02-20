@@ -1,29 +1,33 @@
 package edu.lawrence.to;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Column;
+import org.hibernate.annotations.GenericGenerator;;
 
 /**
  * @author Malik Graham
  */
 @Entity
+@Table(name = "User")
 public class User {
 	  @Id
-	  @GeneratedValue(strategy = GenerationType.AUTO)
-	  private Long id;
+	  @GenericGenerator(name = "uuid", strategy = "uuid2")
+	  @GeneratedValue(generator = "uuid")
+	  @Column(name = "userid")
+	  private Long userid;
+	  @Column(name = "username")
 	  private String userName;
+	  @Column(name = "password")
 	  private String password;
+	  @Column(name = "email")
 	  private String email;
+	  @Column(name = "administrator")
 	  private int administrator;
 	  
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 	public String getUserName() {
 		return userName;
 	}
@@ -47,6 +51,12 @@ public class User {
 	}
 	public void setAdministrator(int administrator) {
 		this.administrator = administrator;
+	}
+	public Long getUserid() {
+		return userid;
+	}
+	public void setUserId(Long userid) {
+		this.userid = userid;
 	}
 	  
 

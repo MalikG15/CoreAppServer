@@ -36,6 +36,5 @@ public class UserRestController {
 	return null;
 	}
 	
-	//@RequestMapping("")
 
 }
