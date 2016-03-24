@@ -18,8 +18,8 @@ public class Application implements CommandLineRunner {
 	    SpringApplication.run(Application.class, args);
 	  }
 	  
-	  @Override
-	  public void run(final String... args) throws Exception {}
-	  
-	  
+	  public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
 }

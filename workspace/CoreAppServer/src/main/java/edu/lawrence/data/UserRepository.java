@@ -10,8 +10,8 @@ import edu.lawrence.to.User;
  */
 
 public interface UserRepository extends JpaRepository<User, Long> {
+	User findByUsernameAndPassword(String username, String password);
 	User findByUsername(String username);
 	User findByPassword(String password);
-	String findUsernameByUsernameAndPassword(String Username, String Password);
-	User findByUsernameAndPassword(String Username, String Password);
+	User findUsernameByUsername(String Username, String Password);
 }

@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import edu.lawrence.data.UserRepository;
 import edu.lawrence.to.User;
@@ -26,18 +29,23 @@ public class UserRestController {
 	UserRepository userRepository;
 	
 	@ResponseBody
-	@RequestMapping("/user")
-	public User validateUser(@RequestParam Map<String, String> userInfo) {
-		String[] username = (userInfo.keySet()).toArray(new String[0]);
-		String[] password = (userInfo.values()).toArray(new String[0]);
-		User checkUser = this.userRepository.findByUsernameAndPassword(username[0], password[0]);
+	@RequestMapping("/checkuser")
+	public User validateUser(@RequestParam("username") String username, @RequestParam("password") String password) {
+		User checkUser = this.userRepository.findByUsernameAndPassword(username, password);
 		if (checkUser != null) {
 			return checkUser;
 		}
-	return null;
+		return null;
 	}
 	
-	//@RequestMapping("/user/{newuser}")
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/newuser", method = RequestMethod.POST)
+	public User createNewUser(@RequestBody User user) {
+		this.userRepository.saveAndFlush(user);
+		return user;
+	}
 	
-
+	// RoleAuthorities.xml - where I define certain roles for specific users
+	// Spring Security 
+	// Never write a clear password to the database
 }

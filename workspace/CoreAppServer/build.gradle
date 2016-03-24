@@ -12,6 +12,11 @@ buildscript {
     }
 }
 
+jar {
+    baseName = 'gs-rest-service-cors'
+    version =  '0.1.0'
+}
+
 apply plugin: 'io.spring.dependency-management'
 
 repositories {

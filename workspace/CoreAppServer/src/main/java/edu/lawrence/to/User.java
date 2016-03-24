@@ -17,22 +17,22 @@ public class User {
 	  @GenericGenerator(name = "uuid", strategy = "uuid2")
 	  @GeneratedValue(generator = "uuid")
 	  @Column(name = "userid")
-	  private Long userid;
+	  private String userid;
 	  @Column(name = "username")
-	  private String userName;
+	  private String username;
 	  @Column(name = "password")
 	  private String password;
 	  @Column(name = "email")
 	  private String email;
 	  @Column(name = "administrator")
 	  private int administrator;
-	  
+	  	
 
 	public String getUserName() {
-		return userName;
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;
@@ -52,12 +52,10 @@ public class User {
 	public void setAdministrator(int administrator) {
 		this.administrator = administrator;
 	}
-	public Long getUserid() {
+	public String getUserid() {
 		return userid;
 	}
-	public void setUserId(Long userid) {
+	public void setUserId(String userid) {
 		this.userid = userid;
 	}
-	  
-
 }
