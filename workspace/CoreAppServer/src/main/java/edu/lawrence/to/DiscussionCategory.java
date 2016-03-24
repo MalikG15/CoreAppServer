@@ -12,8 +12,8 @@ import java.util.Date;
  * @author Malik Graham
  */
 @Entity
-@Table(name = "DiscussionCategories")
-public class DiscussionCategories {
+@Table(name = "DiscussionCategory")
+public class DiscussionCategory {
 	@Id
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid")
