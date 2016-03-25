@@ -1,11 +1,7 @@
 package edu.lawrence.rest;
 
-import java.util.List;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,13 +23,13 @@ public class UserRestController {
 	
 	@Autowired
 	UserRepository userRepository;
-	
+	 
 	@ResponseBody
 	@RequestMapping("/checkuser")
-	public User validateUser(@RequestParam("username") String username, @RequestParam("password") String password) {
+	public String validateUser(@RequestParam("username") String username, @RequestParam("password") String password) {
 		User checkUser = this.userRepository.findByUsernameAndPassword(username, password);
 		if (checkUser != null) {
-			return checkUser;
+			return checkUser.getUserid();
 		}
 		return null;
 	}
