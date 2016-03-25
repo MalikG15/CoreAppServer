@@ -23,8 +23,6 @@ public class DiscussionCategory {
 	private String category;
 	@Column(name = "date")
 	private Date date;
-	@Column(name = "rating")
-	private String rating;
 	
 	public String getDiscussioncategoryid() {
 		return discussioncategoryid;
@@ -43,12 +41,6 @@ public class DiscussionCategory {
 	}
 	public void setDate(Date date) {
 		this.date = date;
-	}
-	public String getRating() {
-		return rating;
-	}
-	public void setRating(String rating) {
-		this.rating = rating;
 	}
 
 }

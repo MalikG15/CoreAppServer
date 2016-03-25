@@ -14,6 +14,7 @@ public class Comment {
 	@Id
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid")
+	@Column(name = "commentid")
 	private String commentid;
 	@Column(name = "user")
 	private String user;

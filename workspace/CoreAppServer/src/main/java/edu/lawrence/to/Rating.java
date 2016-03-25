@@ -20,6 +20,10 @@ public class Rating {
 	private String ratingid;
 	@Column(name = "user")
 	private String user;
+	@Column(name = "discussion")
+	private String discussion;
+	@Column(name = "discussioncategory")
+	private String discussioncategory;
 	
 	public String getRatingid() {
 		return ratingid;
@@ -32,6 +36,18 @@ public class Rating {
 	}
 	public void setUser(String user) {
 		this.user = user;
+	}
+	public String getDiscussion() {
+		return discussion;
+	}
+	public void setDiscussion(String discussion) {
+		this.discussion = discussion;
+	}
+	public String getDiscussioncategory() {
+		return discussioncategory;
+	}
+	public void setDiscussioncategory(String discussioncategory) {
+		this.discussioncategory = discussioncategory;
 	}
 
 }
