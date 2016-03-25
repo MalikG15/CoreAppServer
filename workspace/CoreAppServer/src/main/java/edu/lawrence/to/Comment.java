@@ -8,47 +8,43 @@ import javax.persistence.Column;
 import org.hibernate.annotations.GenericGenerator;
 import java.util.Date;
 
-/**
- * @author Malik Graham
- */
 @Entity
-@Table(name = "Discussion")
-public class Discussion {
+@Table(name = "Comment")
+public class Comment {
 	@Id
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid")
-	@Column(name = "discussionid")
-	private String discussionid;
-	@Column(name = "author")
-	private String author;
-	@Column(name = "title")
-	private String title;
+	private String commentid;
+	@Column(name = "user")
+	private String user;
+	@Column(name = "discussion")
+	private String discussion;
 	@Column(name = "body")
 	private String body;
-	@Column(name = "category")
-	private String category;
+	@Column(name = "parent")
+	private String parent;
 	@Column(name = "date")
 	private Date date;
 	@Column(name = "rating")
 	private String rating;
-	
-	public String getDiscussionid() {
-		return discussionid;
+
+	public String getCommentid() {
+		return commentid;
 	}
-	public void setDiscussionid(String discussionid) {
-		this.discussionid = discussionid;
+	public void setCommentid(String commentid) {
+		this.commentid = commentid;
 	}
-	public String getAuthor() {
-		return author;
+	public String getUser() {
+		return user;
 	}
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setUser(String user) {
+		this.user = user;
 	}
-	public String getTitle() {
-		return title;
+	public String getDiscussion() {
+		return discussion;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setDiscussion(String discussion) {
+		this.discussion = discussion;
 	}
 	public String getBody() {
 		return body;
@@ -56,11 +52,11 @@ public class Discussion {
 	public void setBody(String body) {
 		this.body = body;
 	}
-	public String getCategory() {
-		return category;
+	public String getParent() {
+		return parent;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setParent(String parent) {
+		this.parent = parent;
 	}
 	public Date getDate() {
 		return date;
@@ -74,6 +70,5 @@ public class Discussion {
 	public void setRating(String rating) {
 		this.rating = rating;
 	}
-	
-	
+
 }
