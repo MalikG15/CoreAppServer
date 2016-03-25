@@ -16,8 +16,8 @@ public class Comment {
 	@GeneratedValue(generator = "uuid")
 	@Column(name = "commentid")
 	private String commentid;
-	@Column(name = "user")
-	private String user;
+	@Column(name = "author")
+	private String author;
 	@Column(name = "discussion")
 	private String discussion;
 	@Column(name = "body")
@@ -26,20 +26,12 @@ public class Comment {
 	private String parent;
 	@Column(name = "date")
 	private Date date;
-	@Column(name = "rating")
-	private String rating;
 
 	public String getCommentid() {
 		return commentid;
 	}
 	public void setCommentid(String commentid) {
 		this.commentid = commentid;
-	}
-	public String getUser() {
-		return user;
-	}
-	public void setUser(String user) {
-		this.user = user;
 	}
 	public String getDiscussion() {
 		return discussion;
@@ -65,11 +57,11 @@ public class Comment {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public String getRating() {
-		return rating;
+	public String getAuthor() {
+		return author;
 	}
-	public void setRating(String rating) {
-		this.rating = rating;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 }
