@@ -40,9 +40,17 @@ public class UserRestController {
 	
 	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/newuser", method = RequestMethod.POST)
-	public User createNewUser(@RequestBody User user) {
-		this.userRepository.saveAndFlush(user);
-		return user;
+	public String createNewUser(@RequestBody User user) {
+		if (this.userRepository.findByEmail(user.getEmail()) != null) {
+			throw new RuntimeException("There is already an account with this email");
+		}
+		else if (this.userRepository.findByUsername(user.getUserName()) != null) {
+			throw new RuntimeException("There is already an account with this username");
+		}
+		else {
+			this.userRepository.saveAndFlush(user);
+			return user.getUserid();
+		}
 	}
 	
 	// RoleAuthorities.xml - where I define certain roles for specific users
