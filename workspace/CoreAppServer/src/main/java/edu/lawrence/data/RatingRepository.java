@@ -6,6 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * @author Malik Graham
  */
-public interface RatingRepository {
+public interface RatingRepository extends JpaRepository<Rating, Long> {
+	
+	Long countByDiscussionId(String discussionid);
+	Long countByDiscussionCategoryId(String discussioncategoryid);
+	Long countByCommentId(String commentid);
 		
 }
