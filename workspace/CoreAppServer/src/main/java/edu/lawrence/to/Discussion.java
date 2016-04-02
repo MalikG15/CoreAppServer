@@ -25,8 +25,8 @@ public class Discussion {
 	private String title;
 	@Column(name = "body")
 	private String body;
-	@Column(name = "category")
-	private String category;
+	@Column(name = "discussioncategoryid")
+	private String discussioncategoryid;
 	@Column(name = "date")
 	private Date date;
 	@Column(name = "rating")
@@ -56,11 +56,11 @@ public class Discussion {
 	public void setBody(String body) {
 		this.body = body;
 	}
-	public String getCategory() {
-		return category;
+	public String getDiscussioncategoryid() {
+		return discussioncategoryid;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+	public void setDiscussioncategoryid(String discussioncategoryid) {
+		this.discussioncategoryid = discussioncategoryid;
 	}
 	public Date getDate() {
 		return date;

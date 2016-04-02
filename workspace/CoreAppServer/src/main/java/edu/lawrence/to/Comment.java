@@ -18,26 +18,32 @@ public class Comment {
 	private String commentid;
 	@Column(name = "author")
 	private String author;
-	@Column(name = "discussion")
-	private String discussion;
+	@Column(name = "discussionid")
+	private String discussionid;
 	@Column(name = "body")
 	private String body;
 	@Column(name = "parent")
 	private String parent;
 	@Column(name = "date")
 	private Date date;
-
+	
 	public String getCommentid() {
 		return commentid;
 	}
 	public void setCommentid(String commentid) {
 		this.commentid = commentid;
 	}
-	public String getDiscussion() {
-		return discussion;
+	public String getAuthor() {
+		return author;
 	}
-	public void setDiscussion(String discussion) {
-		this.discussion = discussion;
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public String getDiscussionid() {
+		return discussionid;
+	}
+	public void setDiscussionid(String discussionid) {
+		this.discussionid = discussionid;
 	}
 	public String getBody() {
 		return body;
@@ -57,11 +63,6 @@ public class Comment {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
+
 
 }

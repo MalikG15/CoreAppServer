@@ -19,11 +19,13 @@ public class Rating {
 	@Column(name = "ratingid")
 	private String ratingid;
 	@Column(name = "user")
-	private String user;
+	private String userid;
 	@Column(name = "discussion")
-	private String discussion;
+	private String discussionid;
 	@Column(name = "discussioncategory")
-	private String discussioncategory;
+	private String discussioncategoryid;
+	@Column(name = "comment")
+	private String commentid;
 	
 	public String getRatingid() {
 		return ratingid;
@@ -31,23 +33,29 @@ public class Rating {
 	public void setRatingid(String ratingid) {
 		this.ratingid = ratingid;
 	}
-	public String getUser() {
-		return user;
+	public String getUserid() {
+		return userid;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
-	public String getDiscussion() {
-		return discussion;
+	public String getDiscussionid() {
+		return discussionid;
 	}
-	public void setDiscussion(String discussion) {
-		this.discussion = discussion;
+	public void setDiscussionid(String discussionid) {
+		this.discussionid = discussionid;
 	}
-	public String getDiscussioncategory() {
-		return discussioncategory;
+	public String getDiscussioncategoryid() {
+		return discussioncategoryid;
 	}
-	public void setDiscussioncategory(String discussioncategory) {
-		this.discussioncategory = discussioncategory;
+	public void setDiscussioncategoryid(String discussioncategoryid) {
+		this.discussioncategoryid = discussioncategoryid;
+	}
+	public String getCommentid() {
+		return commentid;
+	}
+	public void setCommentid(String commentid) {
+		this.commentid = commentid;
 	}
 
 }
