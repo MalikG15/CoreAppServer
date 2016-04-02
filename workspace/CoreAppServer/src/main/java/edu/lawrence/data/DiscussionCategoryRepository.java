@@ -9,7 +9,9 @@ import java.util.Date;
  * @author Malik Graham
  */
 public interface DiscussionCategoryRepository extends JpaRepository<DiscussionCategory, Long> {
-	List<DiscussionCategory> findByCategory(String category);
+	DiscussionCategory findByDiscussionCategoryId(String discussioncategoryid);
+	List<DiscussionCategory> findByCategoryLike(String category); 
+	DiscussionCategory findByCategory(String category);
 	List<DiscussionCategory> findAllOrderByDateDesc();
 	List<DiscussionCategory> findAllOrderByCategoryDesc();
 	List<DiscussionCategory> findByDateGreaterThanEqual(Date date);

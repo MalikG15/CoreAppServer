@@ -19,6 +19,8 @@ public class DiscussionCategory {
 	@GeneratedValue(generator = "uuid")
 	@Column(name = "discussioncategoryid")
 	private String discussioncategoryid;
+	@Column(name = "userid")
+	private String userid;
 	@Column(name = "category")
 	private String category;
 	@Column(name = "date")
@@ -41,6 +43,12 @@ public class DiscussionCategory {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 
 }

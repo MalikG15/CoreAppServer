@@ -3,8 +3,8 @@ package edu.lawrence.data;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import edu.lawrence.to.User;
+
 /**
  * @author Malik Graham
  */
